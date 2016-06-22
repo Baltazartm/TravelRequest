@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ import com.company.travelrequest.service.TourService;
  */
 @Controller
 public class HomeController {
-	
+	HttpSession session;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Autowired
 	TourService tourService;
@@ -42,10 +44,21 @@ public class HomeController {
 		
 		return "home";
 	}
-	
-	@ModelAttribute("allTours")
-	public List<Tour> fetchAllTours(){
+			
+	@ModelAttribute("allTrips")
+	public List<Tour> fetchAllTours(HttpSession session){
 		return tourService.findAllTours();
+//		if(session == null){
+//			return tourService.findAllTours();
+//		}else {
+//			Object sess = session.getAttribute("loggedInUser");
+//			return tourService.findAllTours(sess);
+//		}
+	}
+	
+	@ModelAttribute("submittedTrips")
+	public List<Tour> fetchSubmittedTours(){
+		return tourService.findSubmittedTours();
 	}
 	
 }

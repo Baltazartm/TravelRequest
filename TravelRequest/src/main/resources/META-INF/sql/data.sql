@@ -5,6 +5,6 @@ insert into user (id, name, password, user_type) values(114, 'manager2', 'test12
 insert into user (id, name, password, user_type) values(115, 'manager3', 'test1234', 'B')
 insert into user (id, name, password, user_type) values(116, 'financemanager1', 'test1234', 'C')
 
-insert into tour (status, user_id, start_date, end_date) values('2', 111, '2016-07-11', '2016-07-15')
-insert into tour (status, user_id, start_date, end_date) values('3', 111, '2016-09-2', '2016-09-7')
-insert into tour (status, user_id, start_date, end_date) values('2', 111, '2016-09-11', '2016-09-14')
+insert into tour (status, tobe_approvedby, description, user_id, start_date, end_date) values('2', 113, 'A visit to the Mr abc in town abc for abc business deal', 111, '2016-07-11', '2016-07-15')
+insert into tour (status, tobe_approvedby, description, user_id, start_date, end_date) values('2', 114,'A visit to the Mr abc in town abc for abc business deal', 111, '2016-09-2', '2016-09-7')
+insert into tour (status, tobe_approvedby, description, user_id, start_date, end_date) values('2', 113,'A visit to the Mr abc in town abc for abc business deal', 112, '2016-09-11', '2016-09-14')

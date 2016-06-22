@@ -26,12 +26,20 @@ public class TourDao {
 	}
 	
 	public List<Tour> findAllTours(Long userId){
-		return entityManager.createQuery("SELECT o FROM Tour WHERE user_id=userId", Tour.class).getResultList();
+		return entityManager.createQuery("SELECT o FROM Tour o WHERE o.user_id = (:userId)", Tour.class).setParameter("userId", userId).getResultList();
 	}
 	
 	public Tour findTour(Long id){
 		if(id == null) return null;
 		return entityManager.find(Tour.class, id);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Tour> findSubmittedTours(String sts){
+		if(sts == null) return null;
+		return entityManager.createQuery("SELECT o FROM Tour o WHERE o.status LIKE :sts")
+				.setParameter("sts", sts)
+				.getResultList();
 	}
 	
 	@Transactional

@@ -28,8 +28,20 @@ public class TourService {
 		return tourDao.findTour(id);
 	}
 	
+	// Query to find all travel record
 	public List<Tour> findAllTours(){
 		return tourDao.findAllTours();
+	}
+	
+//	Overiding method above to find travel record for specific user
+	public List<Tour> findAllTours(Object sess){
+		Long user = Long.parseLong((String) sess);
+		return tourDao.findAllTours(user);
+	}
+	
+	public List<Tour> findSubmittedTours(){
+		String sts = "2";
+		return tourDao.findSubmittedTours(sts);
 	}
 	
 	public void saveTour(Tour tour){

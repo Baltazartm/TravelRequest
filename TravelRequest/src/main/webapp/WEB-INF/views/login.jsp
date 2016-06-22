@@ -5,29 +5,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<jsp:include page="/WEB-INF/views/include/head-include.jsp" />
+	<link href="resources/css/login.css" rel="stylesheet">
 <title>login</title>
 </head>
 <body>
-	<div class="login-form-1">
-		<form action="login" method="post" id="login-form" class="text-left">
-			<div class="login-form-main-message"></div>
-			<div class="main-login-form">
-				<div class="login-group">
-					<div class="form-group">
-						<label for="userId" class="sr-only">Username</label>
-						<input type="text" class="form-control" id="userId" name="userId" placeholder="username">
-					</div>
-					<div class="form-group">
-						<label for="password" class="sr-only">Password</label>
-						<input type="password" class="form-control" id="password" name="password" placeholder="password">
-					</div>
+	<div id="formLayout">
+		<form action="login" method="post" id="login-form" class="form-signin">
+			<h2 class="form-signin-heading">Please login</h2>
+					<label for="userId" class="sr-only">Username</label>
+					<input type="text" class="form-control" id="userId" name="userId" placeholder="username">
+					
+					<label for="password" class="sr-only">Password</label>
+					<input type="password" class="form-control" id="password" name="password" placeholder="password">
+					
 					<!-- <div class="form-group login-group-checkbox">
 						<input type="checkbox" id="lg_remember" name="lg_remember">
 						<label for="lg_remember">remember</label>
 					</div> -->
-				</div>
-				<button type="submit" class="login-button">Login</button>
-			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 		</form>
 	</div>
 	

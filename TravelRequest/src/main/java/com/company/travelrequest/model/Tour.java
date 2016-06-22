@@ -38,7 +38,8 @@ public class Tour {
 	@Column(name = "hotel_cost")
 	private Long hotelCost;
 	
-	private Long description;
+	@Column(name = "description")
+	private String description;
 	
 	private Date startDate;
 	
@@ -115,11 +116,11 @@ public class Tour {
 		this.hotelCost = hotelCost;
 	}
 
-	public Long getDescription() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(Long description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
